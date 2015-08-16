@@ -1,8 +1,9 @@
 /*TicTacToe Styling*/
 
-body {
+html body {
   background-color: rgb(30,30,40);
   font-family: "Lucida Console", Monaco, monospace;
+  height: 100%;
 }
 
 h2 {
@@ -11,14 +12,15 @@ h2 {
 }
 
 #board {
-  max-width: 600px;
-  max-height: 600px;
-  width: 33.3%;
+  max-width: 300px;
+  max-height: 300px;
+  width: 50%;
+  height: 50%; /*potentially use padding bottom here for square?*/
   margin: 0 auto;
 }
 
 .row {
-  height: 33%;
+  height: 33.3%;
   background-color: rgba(200, 0, 0,.5);
 }
 .col {
@@ -27,5 +29,3 @@ h2 {
   width: 33.3%;
   height: 100%;
 }
-
-

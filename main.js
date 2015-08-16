@@ -42,11 +42,14 @@ var counter = 0;
 function turn() {
   if (counter%2===0) {
     var player = 'X';
-    placeMove(player)
+    placeMove(player);
+  } else {
+    var player = 'O';
+    placeMove(player);
   }
 }
 
-function placeMove(player, row, col) {
-  gameBoard[row][col] = player;
+function placeMove(player, this) {
+  this.innerHTML(player);
 }
 
