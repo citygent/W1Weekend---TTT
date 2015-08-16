@@ -43,13 +43,14 @@ function turn() {
   if (counter%2===0) {
     var player = 'X';
     placeMove(player);
+    counter++
   } else {
     var player = 'O';
     placeMove(player);
+    counter++
   }
 }
 
-function placeMove(player, this) {
-  this.innerHTML(player);
+function placeMove(player) {
+  console.log(player);
 }
-
