@@ -10,12 +10,6 @@
 // var gameBoard = [['r1c1','r1c2','r1c3'],
 //                  ['r2c1','r2c2','r2c3'],
 //                  ['r3c1','r3c2','r3c3']];
-var gameBoard = [
-                ['','',''],
-                ['','',''],
-                ['','','']
-];
-
 
 var r1c1 = document.getElementById('r1c1');
 var r1c2 = document.getElementById('r1c2');
@@ -37,20 +31,41 @@ r3c1.addEventListener('click', turn);
 r3c2.addEventListener('click', turn);
 r3c3.addEventListener('click', turn);
 
+//tried event listeners sending arguments to functions, didn't work. tried making loop to connect through the DOM (see wireBoard, below) which sort-of worked but couldn't get to work properly (assigned '3 3' to every array value). Also couldnt get a make addEventListener loop to work.
+
+var gameBoard = [
+                ['','',''],
+                ['','',''],
+                ['','','']
+];
+
+function getWinner(gameBoard) {
+  //array gets chekced in while loop for all col = player, all row = player, and then the diagnola posibiliies. Long but can make work?
+}
+
 var counter = 0;
+while(counter < 10){
+  // put everything in a loop, whilst loop is true, update divs to status of index's in an array?
+}
+
+function wireBoard() {
+  for(row = 0; row <=2; row++) {
+    for(col = 0; col <=2; col++) {
+      gameBoard[row][col] = document.getElementById('r'+(row+1)+'-c'+(col+1));
+    }
+  }
+}
+// wireBoard(); sets array indexes to div, not what intended.
+// what I intended was to have linked the elements somehow. I think this should be done as part of turn() possibly?
 
 function turn() {
   if (counter%2===0) {
     var player = 'X';
-    placeMove(player);
+    this.innerHTML = player;
     counter++
   } else {
     var player = 'O';
-    placeMove(player);
+    this.innerHTML = player;
     counter++
   }
-}
-
-function placeMove(player) {
-  console.log(player);
 }
